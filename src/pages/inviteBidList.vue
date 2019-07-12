@@ -23,6 +23,7 @@
       </div>
       <router-link to="/another"><el-button type="primary" class="pull-right">to invitebidlist</el-button></router-link>
       <a @click="goto">to invitebidlist by a tag</a>
+      <el-button @click="setssss">click me</el-button>
     </div>
 </template>
 
@@ -31,6 +32,7 @@
   import 'element-ui/lib/theme-chalk/index.css'
   import {Input,Card, Button} from 'element-ui'
   import 'bootstrap/dist/css/bootstrap.min.css'
+  import myImg from '@/components/img'
   Vue.use(Card);
   Vue.use(Button);
   Vue.use(Input);
@@ -49,7 +51,13 @@
           idDone: false,
         }
       },
+      components: { myImg },
       methods: {
+          setssss(){
+            localStorage.setItem('login',true);
+            console.log('set ok', localStorage.getItem('login'))
+            //localStorage.removeItem('login')
+          },
         searchDoc(){
 //                this.date1='';
 //                this.date11='';
@@ -122,6 +130,7 @@
           //console.log(this.date11, this.date22,this.province)
         },
         goto(){
+
           var { href } = this.$router.resolve({name:'another'});
           console.log(this.$router.resolve({name:'another'}),href)
           window.open(href)
