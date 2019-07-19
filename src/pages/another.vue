@@ -11,6 +11,7 @@
 </template>
 
 <script>
+
   import  '@/assets/js/mock'
     export default {
         name: '',
