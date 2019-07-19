@@ -8,19 +8,21 @@ Vue.use(Router);
 const another = resolve => require(['@/pages/another'],resolve);
 const project_trade = resolve => require(['@/pages/project_trade'],resolve);
 const ChargeAndPay = resolve => require(['@/pages/ChargeAndPay'],resolve);
+const ChangePayPwd = resolve => require(['@/pages/ChangePayPwd'],resolve);
 
 var router = new Router({
   routes: [
     {
       path: '/',
       name: 'inviteBidList',
-      component: inviteBidList
+      component: project_trade
     },
     {
       path: '/another',
       name: 'another',
       meta: {
-        requireAuth:true
+        requireAuth:false
+        //requireAuth:true
       },
       component: another
     },
@@ -33,6 +35,11 @@ var router = new Router({
       path: '/project_trade',
       name: 'project_trade',
       component: project_trade
+    },
+    {
+      path: '/changepaypwd',
+      name: 'ChangePayPwd',
+      component: ChangePayPwd
     }
   ]
 

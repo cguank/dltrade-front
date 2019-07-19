@@ -18,6 +18,10 @@
             <h4>3.</h4>
             <h4>4.</h4>
           </div>
+          <div class="qrImg" style="text-align: center" v-if="qr_show">
+            <h4>长按二维码，进行充值</h4>
+            <img src="../assets/images/1234.png">
+          </div>
         </div>
       <div class="pay" style="margin: 20px;" v-if="flag=='charge'">
         <div class="icon" style="text-align: center;">
@@ -72,6 +76,7 @@
     <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
   </span>
       </el-dialog>
+
     </div>
 </template>
 
@@ -82,11 +87,13 @@
   import ElementUI from 'element-ui'
   import ElRow from "element-ui/packages/row/src/row";
   import ElCol from "element-ui/packages/col/src/col";
+
   Vue.use(ElementUI);
     export default {
       components: {
         ElCol,
-        ElRow},
+        ElRow,
+      },
       name: '',
       data: function () {
         return {
